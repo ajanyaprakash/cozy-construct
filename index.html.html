@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paradigm Ecospace</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Urbanist", sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: rgba(0, 0, 0, 0.6);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        color: white;
+      }
+
+      .logo {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 0.8;
+      }
+
+      nav a {
+        margin-left: 25px;
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: aliceblue;
+      }
+
+      .hero {
+        height: 100vh;
+        background: url("./interior12.jpeg") no-repeat center center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      .hero-text {
+        position: relative;
+        color: white;
+        text-align: center;
+        z-index: 1;
+      }
+
+      .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 80px 40px;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: azure;
+      }
+
+      .about,
+      .projects,
+      .contact {
+        color: antiquewhite;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .about p:last-child {
+        font-weight: bold;
+        font-size: 20px;
+        color: #81c784;
+      }
+
+      /* New Slideshow Section Styles */
+      .slideshow-section {
+        position: relative;
+        height: 100vh; /* adjust height */
+        overflow: hidden;
+        margin: 40px auto;
+        max-width: 1200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .slideshow-section .slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        border-radius: 10px;
+      }
+
+      .slideshow-section .slideshow div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        animation: slide 20s infinite;
+        border-radius: 10px;
+      }
+
+      .slideshow-section .slideshow div:nth-child(1) {
+        background-image: url("./1000229412.jpg");
+        animation-delay: 0s;
+      }
+
+      .slideshow-section .slideshow div:nth-child(2) {
+        background-image: url("./1002294160.jpg");
+        animation-delay: 5s;
+      }
+
+      .slideshow-section .slideshow div:nth-child(3) {
+        background-image: url("./110549.jpg");
+        animation-delay: 10s;
+      }
+
+      .slideshow-section .slideshow div:nth-child(4) {
+        background-image: url("./1000229411.jpg");
+        animation-delay: 15s;
+      }
+      .slideshow-section .slideshow div:nth-child(5) {
+        background-image: url("./110403.jpg");
+        animation-delay: 20s;
+      }
+      .slideshow-section .slideshow div:nth-child(6) {
+        background-image: url("./110449.jpg");
+        animation-delay: 25s;
+      }
+
+      @keyframes slide {
+        0%,
+        35%,
+        100% {
+          opacity: 0;
+        }
+        10%,
+        25% {
+          opacity: 1;
+        }
+      }
+
+      .services-grid,
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .card {
+        background-color: cornflowerblue;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+      }
+
+      footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <span style="font-size: 4rem">#Paradigm </span><br />
+        <span style="color: green">Eco</span>space
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#slideshow">Gallery</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Creating Impactful, Sustainable Spaces</h1>
+        <p>Innovate. Sustain. Inspire.</p>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <h2 class="section-title">About Us</h2>
+      <section class="about-section">
+        <div class="about-overlay">
+          <p>
+            At <strong>Paradigm Ecospace</strong>, we envision architecture as
+            an immersive experience—where design meets emotion, and spaces speak
+            our practice is grounded in a deep appreciation for context,
+            culture, and climate.
+          </p>
+          <p>
+            Each of our projects is shaped by thoughtful research, sustainable
+            principles, and meaningful collaboration. Be it residences, public
+            spaces, institutional buildings, or interiors, we approach every
+            space as a canvas to reflect identity, enhance function, and
+            celebrate innovation.
+          </p>
+          <p>
+            Our mission is to craft architecture that resonates with
+            life—structures that breathe with nature, evolve with time, and
+            inspire a better tomorrow.
+          </p>
+          <p>Let’s create spaces that <em>live, connect, and endure</em>.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- Slideshow Section after About Us -->
+    <section
+      id="slideshow"
+      class="slideshow-section"
+      aria-label="Image slideshow"
+    >
+      <div class="slideshow">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="card">Residential Architecture</div>
+        <div class="card">Interior Design</div>
+        <div class="card">Landscape Planning</div>
+        <div class="card">3D Visualization</div>
+        <div class="card">Rennovation</div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <div class="card">Modern Villa</div>
+        <div class="card">Eco-Friendly Retreat</div>
+        <div class="card">Urban Living Space</div>
+        <div class="card">Luxury Bungalow</div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <p>Email: contact@paradigmecospace.com <br />Phone: +91-9037833297</p>
+      <p>Visit us at: Calicut, Kerala, India</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2018 Paradigm Ecospace. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
